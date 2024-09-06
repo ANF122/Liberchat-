@@ -1,0 +1,363 @@
+/* Styles globaux */
+body {
+    font-family: Times, "Times New Roman", Georgia, serif;
+    margin: auto;
+    padding: auto;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #121212;
+    color: #ff00bb;
+    
+}
+
+
+
+h1 {
+    margin: 0 0 10px 0; /* Marge en bas pour séparer le titre de l'image */
+    font-size: 2em; /* Ajuste la taille du titre si nécessaire */
+}
+
+.image {
+    display: block; /* Assure que l'image se comporte comme un bloc */
+    margin: 0; /* Enlève les marges par défaut */
+    max-width: 100%; /* Rend l'image responsive */
+    height: auto; /* Garde les proportions de l'image */
+}
+
+/* Conteneur principal */
+.chat-container {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 90vh;
+    background: #1f1f1f;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Barre latérale */
+.sidebar {
+    width: 320px;
+    background: #212121;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #333;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #333;
+    color: #e0e0e0;
+}
+
+.sidebar-header h1 {
+    font-size: 2.2em;
+    margin: 0;
+}
+
+.sidebar-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.refresh-button,
+.theme-button,
+.report-button {
+    background: #424242;
+    border: none;
+    color: #e0e0e0;
+    font-size: 1.8em;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.refresh-button:hover,
+.theme-button:hover,
+.report-button:hover {
+    background: #616161;
+    transform: scale(1.1);
+}
+
+.sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+/* Barre de recherche */
+.search-bar {
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* Liste des utilisateurs */
+.user-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list li {
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e0e0e0;
+}
+
+/* Section de signalement */
+.report-section {
+    margin-top: auto;
+    padding: auto;
+}
+
+.report-button {
+    background: #ff00bb;
+    border: none;
+    color: #fff;
+    padding: 25px 25px;
+    border-radius: 56px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.2em;
+}
+
+.report-button:hover {
+    background: #fb00ff;
+    
+}
+
+/* Contenu principal */
+.chat-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* En-tête du chat */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #333;
+    color: #e0e0e0;
+    border-bottom: 2px solid #444;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+
+
+.header-right {
+    display: flex;
+    gap: 20px;
+}
+
+.voice-button,
+.settings-button {
+    background: #424242;
+    border: none;
+    color: #e0e0e0;
+    font-size: 2.5em;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.voice-button:hover,
+.settings-button:hover {
+    background: #616161;
+    transform: scale(1.1);
+}
+
+/* Section des messages */
+.messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Conteneur des messages */
+.message {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+/* Conteneur d'entrée */
+.input-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: #333;
+    border-top: 2px solid #444;
+}
+
+#usernameInput,
+#messageInput {
+    flex: 1;
+    padding: 12px;
+    margin: 0 10px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    font-size: 1.2em;
+}
+
+/* Bouton d'envoi */
+.send-button {
+    background: #ff00bb;
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.2em;
+}
+
+.send-button:hover {
+    background: #2a2a2a;
+}
+
+/* Modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #2a2a2a;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 700px;
+    color: #e0e0e0;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2.5em;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 2em;
+}
+
+/* Section de paramètres et de modération */
+.settings-section,
+.moderation-section {
+    margin-top: 20px;
+}
+
+.settings-section h3,
+.moderation-section h3 {
+    font-size: 1.5em;
+}
+
+.settings-section button,
+.moderation-section button {
+    background: #ff00bb;
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1.2em;
+}
+
+.settings-section button:hover,
+.moderation-section button:hover {
+    background: #ff00bb;
+}
+
+.settings-section label,
+.moderation-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: #e0e0e0;
+    resize: vertical;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background: #2a2a2a;
+    color: #e0e0e0;
+}

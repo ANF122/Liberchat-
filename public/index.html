@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiberChat</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>LiberChat </h1>
+                <div class="sidebar-buttons">
+                    <button class="refresh-button" title="Refresh Contacts">🔄</button>
+                    <button class="theme-button" title="Change Theme">🎨</button>
+                </div>
+            </div>
+            <div class="sidebar-content">
+                <div class="search-bar">
+                    <input type="text" id="searchUser" placeholder="Search contacts...">
+                </div>
+                <ul id="userList" class="user-list">
+                    <!-- User list will be populated here -->
+                </ul>
+                <div class="report-section">
+                    <button class="report-button" id="reportButton">Signaler</button>
+                </div>
+            </div>
+        </aside>
+        <div class="chat-main">
+            <header class="header">
+                <div class="header-center">
+                    <h1>LiberChat</h1>
+                    <img src="Design sans titre.png" width=15% height=15% />
+
+                    
+                </div>
+                <div class="header-right">
+                    <button class="voice-button" title="Start Voice Chat">🔊</button>
+                    <button class="settings-button" title="Settings">⚙️</button>
+                </div>
+            </header>
+            <main class="messages" id="messages">
+                <!-- Messages will be appended here -->
+            </main>
+            <footer class="input-container">
+                <input type="text" id="usernameInput" placeholder="Enter your name..." autofocus>
+                <input type="text" id="messageInput" placeholder="Type a message...">
+                <button class="send-button" id="sendButton">Envoyer</button>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Settings</h2>
+            <div class="settings-section">
+                <h3>Theme</h3>
+                <button class="theme-option" data-theme="dark">Dark</button>
+                <button class="theme-option" data-theme="light">Light</button>
+            </div>
+            <div class="settings-section">
+                <h3>Notification Preferences</h3>
+                <label>
+                    <input type="checkbox" id="notifSound">
+                    Enable sound notifications
+                </label>
+                <label>
+                    <input type="checkbox" id="notifDesktop">
+                    Enable desktop notifications
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Chat Modal -->
+    <div id="voiceChatModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Voice Chat</h2>
+            <p>Voice chat is not yet implemented.</p>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Report Message</h2>
+            <form id="reportForm">
+                <label for="reportReason">Reason:</label>
+                <select id="reportReason" name="reportReason">
+                    <option value="spam">Spam</option>
+                    <option value="abuse">Abuse</option>
+                    <option value="harassment">Harassment</option>
+                    <option value="other">Other</option>
+                </select>
+                <label for="reportComment">Comment:</label>
+                <textarea id="reportComment" name="reportComment" rows="4" placeholder="Add additional comments..."></textarea>
+                <button type="submit" class="send-button">Submit Report</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Moderator Panel Modal -->
+    <div id="modPanel" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Moderator Panel</h2>
+            <div class="moderation-section">
+                <h3>User List</h3>
+                <ul id="moderatorUserList" class="user-list">
+                    <!-- Moderation user list -->
+                </ul>
+            </div>
+            <div class="moderation-section">
+                <h3>Reported Messages</h3>
+                <ul id="reportedMessages" class="user-list">
+                    <!-- Reported messages list -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
